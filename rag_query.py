@@ -54,7 +54,6 @@ def query_rag(query: str):
     context = retrieve_relevant_chunks(query)
     return ask_gemini(query, context)
 
-# Streamlit App
 st.title("MkDocs RAG Assistant")
 user_question = st.text_input("Enter your MkDocs question:")
 
@@ -66,3 +65,4 @@ if st.button("Ask"):
             st.write(answer)
     else:
         st.warning("Please enter a question.")
+
