@@ -1,9 +1,6 @@
 # RAG-System
 A Retrieval-Augmented Generation (RAG) system for answering questions about MkDocs documentation using embeddings and Google Gemini API, with an interactive Streamlit interface.
 __________________________________________________________________________________________________________________________________________________________________________________
-# MkDocs RAG Assistant
-This repository implements a Retrieval-Augmented Generation (RAG) system that answers user questions about [MkDocs](https://github.com/mkdocs/mkdocs/tree/master), an open-source static site generator for project documentation.
-__________________________________________________________________________________________________________________________________________________________________________________
 ## Features
 - Uses vector embeddings to retrieve relevant chunks from MkDocs documentation.
 - Answers user queries using Google Gemini API (generative model).
