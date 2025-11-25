@@ -14,8 +14,7 @@ ________________________________________________________________________________
 
 2. **Chunks Cleaning Method**
    - Remove special characters, excessive whitespace, and frontmatter.
-   - Optional: lowercase all text for uniformity.
-
+   - 
 3. **Embedding Model**
    - `all-MiniLM-L6-v2` from Sentence Transformers.
    - Lightweight and fast for semantic similarity search.
