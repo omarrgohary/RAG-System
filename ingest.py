@@ -6,7 +6,6 @@ from tqdm import tqdm
 from sentence_transformers import SentenceTransformer
 from chromadb import PersistentClient
 
-# Clone repo
 def clone_repo(repo_url: str, dest: Path):
     if dest.exists():
         return dest
@@ -14,14 +13,12 @@ def clone_repo(repo_url: str, dest: Path):
     subprocess.check_call(["git", "clone", "--depth", "1", repo_url, str(dest)])
     return dest
 
-# Find Markdown files
 def find_markdown_files(root: Path, docs_path: str):
     docs_dir = root / docs_path
     if not docs_dir.exists():
         raise FileNotFoundError(f"{docs_dir} not found")
     return list(docs_dir.rglob("*.md"))
 
-# Clean markdown
 def clean_markdown_text(text: str) -> str:
     text = re.sub(r"```.*?```", "", text, flags=re.DOTALL)
     text = re.sub(r"`([^`]*)`", r"\1", text)
@@ -31,7 +28,6 @@ def clean_markdown_text(text: str) -> str:
     text = re.sub(r"\n\s*\n", "\n\n", text)
     return text.strip()
 
-# Split into chunks
 def markdown_to_chunks(text: str, source_file: str, chunk_size: int = 500, chunk_overlap: int = 50):
     words = text.split()
     chunks = []
@@ -59,13 +55,9 @@ def main(args):
 
     md_files = find_markdown_files(repo_root, args.docs_path)
     print(f"Found {len(md_files)} markdown files under {args.docs_path}")
-
-    # Use PersistentClient with absolute path
     client = PersistentClient(path=str(persist_path))
     collection = client.get_or_create_collection(args.collection_name)
-
     model = SentenceTransformer(args.embedding_model)
-
     all_texts, metadatas, ids = [], [], []
     idx = 0
     for md_path in tqdm(md_files, desc="Processing Markdown files"):
@@ -101,3 +93,4 @@ if __name__ == "__main__":
     parser.add_argument("--embedding-model", type=str, default="all-MiniLM-L6-v2")
     args = parser.parse_args()
     main(args)
+
