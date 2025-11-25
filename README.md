@@ -20,7 +20,7 @@ ________________________________________________________________________________
    - Lightweight and fast for semantic similarity search.
 
 4. **Vector Database**
-   - ChromaDB used for storing embeddings and retrieving relevant chunks.
+   - ChromaDB used for storing embeddings and retrieving relevant chunks. (Uploaded in Branch 2)
 
 5. **Sample Questions**
    - *How do I add a new page to my MkDocs documentation?*
