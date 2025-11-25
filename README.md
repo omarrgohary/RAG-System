@@ -29,14 +29,5 @@ ________________________________________________________________________________
      - **Context retrieved**: Theme configuration sections in `mkdocs.yml`.
 __________________________________________________________________________________________________________________________________________________________________________________
 ## Bonus
-1. Supports multimodal embeddings (text + images) – can store images with descriptive captions in ChromaDB.
+1. Streamlit app allows users to interactively ask questions.
 __________________________________________________________________________________________________________________________________________________________________________________
-3. Streamlit app allows users to interactively ask questions.
-
-## Installation
-
-```bash
-git clone <YOUR_REPO_URL>
-cd mkdocs-rag
-pip install -r requirements.txt
-
